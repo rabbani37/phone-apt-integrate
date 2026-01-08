@@ -1,21 +1,23 @@
 // data load from API;
-const url = "https://openapi.programming-hero.com/api/phones?search=iphone"
-const dataLoadFromApi = async () => {
+const phoneDataLoad = async (searchText = 'iphone') => {
+    const url = `https://openapi.programming-hero.com/api/phones?search=${searchText}`
     const response = await fetch(url)
     const apiData = await response.json()
     const phones = apiData.data;
     displayPhone(phones)
-    
-}
 
+}
+phoneDataLoad()
 const displayPhone = phones => {
-    const phonesContainer = document.getElementById("phones_container")
+    const phonesContainer = document.getElementById("phones_container");
+    phonesContainer.textContent = ''
+
     phones.forEach(phone => {
-        console.log(phones);
-        const {brand,image,phone_name,slug} = phone;
+        // console.log(phones);
+        const { brand, image, phone_name, slug } = phone;
         const phoneCard = document.createElement('div');
         phoneCard.classList = "card bg-base-200 w-full  shadow-sm p-5 border border-gray-300"
-        phoneCard.innerHTML=`
+        phoneCard.innerHTML = `
         <p class="text-gray-400">${brand} </p>
              <figure>
                         <img src="${image}" />
@@ -35,4 +37,25 @@ const displayPhone = phones => {
     });
 }
 
-dataLoadFromApi(); // call dataLoad function
+// handel search button
+const searchHandler = () => {
+    const inputField = document.getElementById("search_field");
+    const inputText = inputField.value;
+    const inputValue = inputText.trim().toLowerCase()
+
+    const phoneName = ["oppo","samsung","iphone"]
+    if (phoneName.includes(inputValue)) {
+        phoneDataLoad(inputValue);
+        inputField.value = ''
+    }
+    else {
+        alert("please provide right phone name");
+        inputField.value = ''
+    }
+
+}
+// phoneDataLoad(); // call dataLoad function
+
+
+
+

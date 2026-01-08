@@ -34,38 +34,20 @@
         <section>
             <div class="text-center mt-24">
                 <h2 class="text-3xl font-semibold">Search your phone</h2>
-                <div class="my-8 ">
-                    <div class="join w-full flex justify-center ">
-                        <input class="input rounded-bl-md rounded-tl-md" type="email" placeholder="Search" />
-                        <button class="btn btn-primary join-item ">Search</button>
-                    </div>
+                <p class="my-4 text-gray-400"> <<-- samsung, oppo, iphone, now available here -->> </p>
+                <div class="join w-full flex justify-center mb-10">
+                    <input id="search_field" class="input font-medium join-item " type="text" placeholder="Search" />
+                    <button id="searchButton" onclick="searchHandler()" class="btn btn-primary join-item " >Search</button>
                 </div>
+
             </div>
 
             <!-- phones container  -->
             <div id="phones_container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:px-0 px-7">
 
 
+                <!-- Phone card here from 'phone.js' -->
 
-
-
-                <!-- <figure>
-                        <img src="https://fdn2.gsmarena.com/vv/bigpic/apple-iphone-13-pro-max.jpg" alt="Shoes" />
-                    </figure>
-                    <div class="card-body text-center">
-
-                        <h2 class="text-2xl font-bold text-center">Card Title</h2>
-                        <div class="font-semibold flex text-lg items-center ">
-                            <p>Brand: </p>
-                            <p>slug: </p>
-                        </div>
-                        <p class="text-gray-600 font-semibold">A card component has a figure, a body part, and inside
-                            body there are title and actions parts</p>
-
-                        <div class="card-actions justify-center">
-                            <button class="btn w-3/5  btn-primary">Show Details</button>
-                        </div>
-                    </div> -->
 
             </div>
         </section>
