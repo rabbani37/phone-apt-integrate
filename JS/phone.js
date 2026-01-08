@@ -16,16 +16,13 @@ const displayPhone = phones => {
         const phoneCard = document.createElement('div');
         phoneCard.classList = "card bg-base-200 w-full  shadow-sm p-5 border border-gray-300"
         phoneCard.innerHTML=`
+        <p class="text-gray-400">${brand} </p>
              <figure>
                         <img src="${image}" />
                     </figure>
                     <div class="card-body text-center">
 
                         <h2 class="text-2xl font-bold text-center"> ${phone_name}</h2>
-                        <div class="font-semibold text-gray-500 text-lg  ">
-                            <p>Brand: <span class="text-black"> ${brand}</span> </p>
-                            <p>Model:<span class="text-black"> ${slug}</span>  </p>
-                        </div>
                         <p class="text-gray-600 font-semibold">A card component has a figure, a body part, and inside
                             body there are title and actions parts</p>
 
