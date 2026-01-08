@@ -30,25 +30,41 @@
     </header>
 
     <main class="mb-10">
+
+
+
         <!-- Search your phone -->
         <section>
+
             <div class="text-center mt-24">
+
                 <h2 class="text-3xl font-semibold">Search your phone</h2>
-                <p class="my-4 text-gray-400"> <<-- samsung, oppo, iphone, now available here -->> </p>
+                <p class="my-4 text-gray-400">samsung, oppo, iphone, now available here</p>
                 <div class="join w-full flex justify-center mb-10">
                     <input id="search_field" class="input font-medium join-item " type="text" placeholder="Search" />
-                    <button id="searchButton" onclick="searchHandler()" class="btn btn-primary join-item " >Search</button>
+                    <button id="searchButton" onclick="searchHandler()"
+                        class="btn btn-primary join-item ">Search</button>
                 </div>
 
+                <!-- spinner -->
+                <div class="mb-5 hidden">
+                    <span class="loading loading-spinner loading-xl"></span>
+                </div>
             </div>
 
             <!-- phones container  -->
+            <div id="total_Phone"></div>
             <div id="phones_container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:px-0 px-7">
 
 
                 <!-- Phone card here from 'phone.js' -->
 
 
+            </div>
+            <div id="show_all_container" class="hidden">
+                <div class="flex justify-center items-center my-5">
+                    <button class="btn btn-outline btn-primary">Show All</button>
+                </div>
             </div>
         </section>
     </main>
