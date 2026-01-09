@@ -47,7 +47,7 @@
                 </div>
 
                 <!-- spinner -->
-                <div class="mb-5 hidden">
+                <div id="loading_spinner" class="mb-5 hidden">
                     <span class="loading loading-spinner loading-xl"></span>
                 </div>
             </div>
@@ -61,17 +61,60 @@
 
 
             </div>
-            <div id="show_all_container" class="hidden">
-                <div class="flex justify-center items-center my-5">
-                    <button class="btn btn-outline btn-primary">Show All</button>
-                </div>
+            <div id="show_all_container" class="hidden my-8 text-center">
+
+                <button onclick="handleShowAll()" class="btn btn-outline btn-primary">Show All</button>
+
             </div>
         </section>
+
+        <!-- show details modal -->
+
+        <!-- Open the modal using ID.showModal() method -->
+        <!-- <button class="btn" onclick="">open modal</button> -->
+        <dialog id="show_details_modal" class="modal modal-middle">
+            <div id="show_details_container" class="modal-box max-h-[90vh]  overflow-y-auto p-6 rounded-xl">
+
+               
+                <div class="bg-slate-50 rounded-lg p-6 mb-5 flex justify-center">
+                    <img src="phone.png" alt="Phone" class="h-48 object-contain" />
+                </div>
+
+                
+                <h3 id="show_details_phoneName" class="text-xl font-bold mb-2">
+                    abccccccccccc
+                </h3>
+
+                
+                <p class="text-sm text-gray-500 mb-4">
+                    It is a long established fact that a reader will be distracted by the readable content of a page
+                    when looking at its layout.
+                </p>
+
+                
+                <div class="text-sm text-gray-700 space-y-2">
+                    <p><span class="font-semibold">Storage:</span> 128GB / 256GB / 1TB</p>
+                    <p><span class="font-semibold">Display Size:</span> 6.7 inches, 108.9 cm</p>
+                    <p><span class="font-semibold">Chipset:</span> Apple A15 Bionic</p>
+                    <p><span class="font-semibold">Memory:</span> 128GB 6GB RAM</p>
+                    <p><span class="font-semibold">Slug:</span> iphone_13_pro_max</p>
+                    <p><span class="font-semibold">Release Date:</span> September 24, 2021</p>
+                    <p><span class="font-semibold">Brand:</span> Apple</p>
+                    <p><span class="font-semibold">GPS:</span> A-GPS, GLONASS, GALILEO</p>
+                </div>
+
+                <div class="modal-action justify-end mt-6">
+                    <form method="dialog">
+                        <button class="btn btn-error px-6">Close</button>
+                    </form>
+                </div>
+
+            </div>
+        </dialog>
+
+
+
     </main>
-
-
-
-
 
 
     <footer></footer>
