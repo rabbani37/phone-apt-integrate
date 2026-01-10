@@ -1,4 +1,4 @@
-const dataLoadPhones = async (searchValue, isShowAllClicked) => {
+const dataLoadPhones = async (searchValue="iphone", isShowAllClicked) => {
     const res = await fetch(`https://openapi.programming-hero.com/api/phones?search=${searchValue}`);
     const data = await res.json();
     const phones = data.data;
@@ -11,8 +11,8 @@ const phonesArrayData = (phones, isShowAllClicked) => {
 
     // if phone more than 8 'Show All' hide/visible and if clicked button visible all phone
     const showAllButton = getElement("show_all_button")
-    if (phones.length > 8 && !isShowAllClicked) {
-        phones = phones.slice(0, 8)
+    if (phones.length > 9 && !isShowAllClicked) {
+        phones = phones.slice(0, 9)
         showAllButton.classList.remove("hidden");
     } else {
         showAllButton.classList.add("hidden");
