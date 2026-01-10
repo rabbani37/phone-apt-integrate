@@ -11,9 +11,9 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 
-<body class="container mx-auto">
+<body>
 
-    <header>
+    <header class="container mx-auto">
         <nav>
             <div class="bg-white w-full px-6 py-4 flex justify-between items-center shadow">
                 <!-- Left Logo -->
@@ -28,9 +28,28 @@
             </div>
 
         </nav>
+
+        <!-- banner -->
+        <section>
+            <div class="flex items-center justify-center ">
+                <div class="text-center w-11/12 mt-10">
+                    <h1 class="text-6xl font-bold">Apple Iphone 13 Pro Max</h1>
+                    <p class="text-gray-600 font-medium my-10 mx-28">
+                        Discover the power of Apple iPhone 13 Pro Max with stunning performance and premium design.
+                        Search and explore Apple, Samsung many more smartphones in one place.
+                        Compare features and specs easily before making your decision.
+                    </p>
+                    <button class="btn btn-primary ">By Now</button>
+                </div>
+            </div>
+            <div class="flex items-center justify-center">
+                <img class="w-3/4" src="img/bannerPhone.png" alt="">
+            </div>
+
+        </section>
     </header>
 
-    <main class="mb-10">
+    <main class="container mx-auto" >
 
 
 
@@ -39,11 +58,13 @@
 
             <div class="text-center mt-24">
 
-                <h2 class="text-3xl font-semibold">Search your phone</h2>
+                <h2 class="text-3xl font-bold">Search your phone</h2>
                 <p class="my-4 text-gray-400">samsung, oppo, iphone, now available here</p>
                 <div class="join w-full flex justify-center mb-10">
-                    <input id="search_field" class="input font-medium join-item " type="text" placeholder="Search" />
-                    <button id="search_Button" onclick="searchHandle()" class="btn btn-primary join-item ">Search</button>
+                    <input id="search_field" class="input font-medium join-item " type="text"
+                        placeholder="phone name " />
+                    <button id="search_Button" onclick="searchHandle()"
+                        class="btn btn-primary join-item ">Search</button>
                 </div>
 
                 <!-- spinner -->
@@ -107,7 +128,7 @@
                     <form method="dialog">
                         <button class="btn btn-error px-6">Close</button>
                     </form>
-                </div> 
+                </div>
 
             </div>
         </dialog>
@@ -117,13 +138,88 @@
     </main>
 
 
-    <footer></footer>
+    <footer class="bg-slate-50 px-10 py-14">
+
+       
+        <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-10">
+            <div>
+                <h2 class="text-2xl font-bold mb-1">Hot Gadgets</h2>
+                <p class="text-sm text-gray-500">
+                    You can definitely work.
+                </p>
+            </div>
+
+            <div class="flex items-center gap-4 mt-4 md:mt-0">
+                <!-- Social icons -->
+                <span
+                    class="w-8 h-8 flex items-center justify-center rounded-full bg-white shadow text-blue-600 cursor-pointer"><img src="img/facebook.png" alt=""></span>
+                <span
+                    class="w-8 h-8 flex items-center justify-center rounded-full bg-white shadow text-sky-500 cursor-pointer"><img src="img/instagram.png" alt=""></span>
+                <span
+                    class="w-8 h-8 flex items-center justify-center rounded-full bg-white shadow text-pink-500 cursor-pointer"><img src="img/twitter.png" alt=""></span>
+
+                <!-- Button -->
+                <button class="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm">
+                    Join Premium
+                </button>
+            </div>
+        </div>
+
+        <hr class="mb-10">
+
+        <!-- Links -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-sm text-gray-600">
+
+            <div>
+                <h3 class="font-semibold mb-3 text-gray-800">Product</h3>
+                <ul class="space-y-2">
+                    <li>Browse jobs</li>
+                    <li>Remote jobs</li>
+                    <li>Startup jobs</li>
+                    <li>Company jobs</li>
+                </ul>
+            </div>
+
+            <div>
+                <h3 class="font-semibold mb-3 text-gray-800">Popular</h3>
+                <ul class="space-y-2">
+                    <li>UI/UX Design</li>
+                    <li>Product Design</li>
+                    <li>Back-End Developer</li>
+                    <li>Front-End Developer</li>
+                </ul>
+            </div>
+
+            <div>
+                <h3 class="font-semibold mb-3 text-gray-800">Resource</h3>
+                <ul class="space-y-2">
+                    <li>Faq</li>
+                    <li>Support</li>
+                    <li>Privacy Policy</li>
+                    <li>Terms of Service</li>
+                </ul>
+            </div>
+
+            <div>
+                <h3 class="font-semibold mb-3 text-gray-800">Company</h3>
+                <ul class="space-y-2">
+                    <li>About Us</li>
+                    <li>Contact Us</li>
+                    <li>Career Tips</li>
+                    <li>Careers</li>
+                </ul>
+            </div>
+
+        </div>
+
+    </footer>
+
 
 
 
     <!-- <script src="JS/phone.js"></script> -->
     <!-- <script src="JS/recap_phone.js"></script> -->
-     <script src="JS/again_recap_phone.js"></script>
+    <script src="JS/again_recap_phone.js"></script>
 </body>
 
 </html>
