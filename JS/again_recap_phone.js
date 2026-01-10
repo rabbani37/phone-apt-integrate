@@ -1,4 +1,4 @@
-const dataLoadPhones = async (searchValue="iphone", isShowAllClicked) => {
+const dataLoadPhones = async (searchValue = "iphone", isShowAllClicked) => {
     const res = await fetch(`https://openapi.programming-hero.com/api/phones?search=${searchValue}`);
     const data = await res.json();
     const phones = data.data;
@@ -40,7 +40,7 @@ const phoneCardDisplay = (phone) => {
                             body there are title and actions parts</p>
 
                         <div class="card-actions justify-center">
-                            <button onclick="" class="btn w-3/5  btn-primary">Show Details</button>
+                            <button onclick="detailsHandler('${phone.slug}')" class="btn w-3/5  btn-primary">Show Details</button>
                         </div>
                     </div>
     `;
@@ -60,6 +60,45 @@ const searchHandle = (isShowAllClicked) => {
 const showAllHandler = () => {
     searchHandle(true)
 }
+const detailsHandler = async (id) => {
+    const res = await fetch(`https://openapi.programming-hero.com/api/phone/${id}`);
+    const data = await res.json();
+    const phone = data.data;
+    phoneDetailsDisplay(phone)
+}
+const phoneDetailsDisplay = (phone) => {
+    show_details_modal.showModal() // open modal
+    const { brand, image, name, releaseDate, slug, mainFeatures, others } = phone;
+    console.log(phone)
+    const phoneDetailsContainer = getElement("show_details_container");
+    phoneDetailsContainer.innerHTML = `
+
+                <div class="bg-slate-50 rounded-lg p-6 mb-5 flex justify-center">
+                    <img src="${image}" alt="Phone" class="h-48 object-contain" />
+                </div>
+
+                <h3 id="show_details_phoneName" class="text-xl font-bold mb-2">${name} </h3>
+
+                <div class="text-sm text-gray-700 space-y-2">
+                    <p><span class="font-semibold">Storage:</span> ${mainFeatures?.storage} </p>
+                    <p><span class="font-semibold">Display Size:</span> ${mainFeatures?.displaySize} </p>
+                    <p><span class="font-semibold">Chipset:</span> ${mainFeatures?.chipSet}</p>
+                    <p><span class="font-semibold">Memory:</span> ${mainFeatures?.memory}</p>
+                    <p><span class="font-semibold">Slug:</span> ${slug}</p>
+                    <p><span class="font-semibold">Release Date:</span> ${releaseDate || "No Date"}</p>
+                    <p><span class="font-semibold">Brand:</span> ${brand}</p>
+                    <p><span class="font-semibold">GPS:</span> ${others?.GPS || "No GPS"}</p>
+                </div>
+
+                <div class="modal-action justify-end mt-6">
+                    <form method="dialog">
+                        <button class="btn btn-error px-6">Close</button>
+                    </form>
+                </div>
+
+    `;
+}
+
 const toggleLoadingSpinner = (isLoading) => {
     const loadingSpinner = getElement("loading_spinner");
     if (isLoading) {

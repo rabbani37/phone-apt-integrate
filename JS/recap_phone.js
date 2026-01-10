@@ -92,8 +92,8 @@ const showDetailsHandler = (id) => {
 }
 const singlePhone = (phone) => {
     show_details_modal.showModal() // open modal
-    const {brand, image, name, releaseDate, slug, mainFeatures, others } = phone;
-console.log(phone)
+    const { brand, image, name, releaseDate, slug, mainFeatures, others } = phone;
+    console.log(phone)
     const phoneDetailsContainer = getElement("show_details_container");
     phoneDetailsContainer.innerHTML = `
 
